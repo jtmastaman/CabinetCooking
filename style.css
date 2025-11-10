@@ -7,6 +7,9 @@
 	padding: 0px;
 	font-style: normal;
 }
+body {
+	background-color: #FDF9ED;
+}
 .test {
 	border:1px solid;
 	display: inline;
@@ -18,13 +21,70 @@ li {
 	align-items: center;
 	justify-content: space-between;
 	display:flex;
-	padding-left:5%;
-	padding-right:5%;
+	width: 50%;
+	margin: 20px auto;
+	padding: 4px 20px;
+	background-color: #D6CCC2;
+	border-radius: 32px;
 }
+
+.navbar nav {
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+.navbar ul {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 .navbar li a {
 	color:#3D2A2A;
 	transition: all 0.3s ease 0s;
 }
 .navbar li a:hover {
 	color:#A2A16A;
+}
+
+.navbar input {
+	flex: 1;
+	background-color: #3A3735;
+	border-radius: 16px;
+	border: none;
+	
+}
+
+.asdf {
+	text-align: center;
+	margin: 40px auto;
+	color: black;
+}
+
+.card-containers{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cards img{
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+.cards-content{
+
+}
+
+.cards button{
+	justify-content: center;
+	width: 80%;
+	height: 30px;
 }
