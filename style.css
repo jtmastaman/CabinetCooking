@@ -175,6 +175,39 @@ nav {
 
 }
 
+.recipe-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	padding: 2rem;
+	border-radius: 8px;
+}
+
+.recipe-cards div {
+	
+    background-color:#f0ece8;
+	border-radius: 8px;
+	text-align: center;
+	padding-bottom: 1rem;	
+}
+
+.recipe-cards img {
+	border-radius: 8px;
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+
+.recipe-cards h3 {
+
+}
+
+.recipe-cards button {
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
 .footer {
 	width: 100%;
 	height: 15vh;

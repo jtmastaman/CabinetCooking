@@ -26,7 +26,7 @@ function cards(results) {
         
         card.innerHTML = `
             <img src="${recipe.image}" alt="${recipe.title}">
-            <h3>${recipe.title}</h3>
+            <h2>${recipe.title}</h2>
             <button class="view-btn">View Recipe</button>
         `;
 
