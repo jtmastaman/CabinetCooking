@@ -1,5 +1,4 @@
 const searchInput = document.getElementById('recipe-search');
-const suggestions = document.getElementById('suggestions');
 const searchBtn = document.getElementById('recipe-btn');
 
 function search() {
