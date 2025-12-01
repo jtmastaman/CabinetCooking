@@ -3,6 +3,8 @@ const cardsContainer = document.querySelector(".recipe-cards");
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get('query');
 
+document.getElementById("search-query").textContent = query;
+
 function search(searchQuery) {
     const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchQuery}`;
 
