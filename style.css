@@ -222,3 +222,13 @@ nav {
 	height: 15vh;
 	background-color: #252525;
 }
+
+.find-recipe-btn {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 0.75rem 1rem;
+	border-radius: 8px;
+	background-color: #252525;
+	text-decoration: white;
+}

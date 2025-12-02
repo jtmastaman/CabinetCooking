@@ -23,13 +23,13 @@ function cards(results) {
         cardsContainer.innerHTML="<p>Only ghosts lie here...<p>"
     }
 
-    results.forEach(recipe => {
+    results.forEach(ingredient => {
         const card = document.createElement("div");
         
         card.innerHTML = `
-            <img src="${recipe.image}" alt="${recipe.title}">
-            <h2>${recipe.title}</h2>
-            <button class="view-btn">View Recipe</button>
+            <img src="${ingredient.image}" alt="${ingredient.title}">
+            <h2>${ingredient.title}</h2>
+            <button class="view-btn">Add</button>
         `;
 
         cardsContainer.appendChild(card);
