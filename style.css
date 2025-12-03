@@ -10,7 +10,7 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: #FDF9ED;
+	background-color: #F0E9D2;
 }
 
 nav {
@@ -20,17 +20,18 @@ nav {
 	width: 100%;
 	height: 50px;
 	padding: 1rem 1%;
-	background-color: #D6CCC2;
+	background-color: #3D3D3D;
 	display: flex;
 	align-items: center; 
 	justify-content: space-between;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
 	position: relative;
 	font-size: 2rem;
 	font-weight: 500;
-	color:#3D2A2A;
+	color:#F0E9D2;
 }
 
 .nav-links {
@@ -45,12 +46,12 @@ nav {
 	position: relative;
 	font-size: 1.05rem;
 	font-weight: 500;
-	color:#3D2A2A;
+	color:#F0E9D2;
 	transition: all 0.3s ease 0s;
 }
 
 .nav-links li a:hover{
-	color:#A2A16A;
+	color:#D4A5A5;
 }
 
 .search-bar input {
@@ -79,23 +80,27 @@ nav {
 .landing-page {
 	display: flex; 
 	align-items: center; 
+	justify-content: space-between;
 	gap: 4rem; 
 	width: 100%; 
-	background-color: #E8DCC8;
+	background-color: #4A90A4;
 	min-height: 75vh;
 	padding: 2rem 1.5%;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.12);
 }
 
 .landing-page h1 {
     font-size: 2.5rem;
-    color: #3D2A2A;
+    color: #F0E9D2;
     margin-bottom: 1.5rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .landing-page p {
     font-size: 1.15rem;
-    color: #5C4B4B;
+    color: #F0E9D2;
     margin-bottom: 1rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .live-search {
@@ -108,8 +113,9 @@ nav {
     width: 100%;
     padding: 0.75rem 1rem;
     font-size: 1rem;
-    border: 2px solid #D6CCC2;
+    border: 2px solid #F0E9D2;
     border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .live-search button {
@@ -118,8 +124,9 @@ nav {
 	justify-content: center;
 	padding: 0.75rem 1rem;
 	border-radius: 8px;
-	border: 2px solid #D6CCC2;
-	background-color: #252525;
+	border: none;
+	background-color: #D4A5A5;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #suggestions {
@@ -136,11 +143,13 @@ nav {
 .ingredients-page {
     width: 100%;
     min-height: 70vh;
-    background-color: #FDF9ED;
+    background-color: #F0E9D2;
     padding: 5rem 5%;
     display: flex;
     justify-content: center;
     align-items: center;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+
 }
 
 .ingredients-content {
@@ -150,30 +159,34 @@ nav {
 
 .ingredients-content h1 {
     font-size: 2.5rem;
-    color: #3D2A2A;
+    color: #3D3D3D;
     margin-bottom: 1rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .subtext {
     font-size: 1.2rem;
-    color: #5C4B4B;
+    color: #3D3D3D;
     margin-bottom: 2rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .steps-title {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #3D2A2A;
+    color: #3D3D3D;
     margin-bottom: 1.5rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .list {
     text-align: left;
     display: inline-block;
     font-size: 1.1rem;
-    color: #5C4B4B;
+    color: #3D3D3D;
     line-height: 2;
     margin-bottom: 2.5rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .list li {
@@ -181,6 +194,12 @@ nav {
 }
 
 .explore-button {
+	display: flex;
+	align-self: center;
+	background-color: #D4A5A5;
+	border-radius: 8px;
+	width: 150px;
+	height: 75px;
 
 }
 
@@ -193,7 +212,6 @@ nav {
 }
 
 .recipe-cards div {
-	
     background-color:#f0ece8;
 	border-radius: 8px;
 	text-align: center;
