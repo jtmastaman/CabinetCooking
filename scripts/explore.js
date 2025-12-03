@@ -28,6 +28,8 @@
             const item = document.createElement("div");
 
             item.innerHTML = `
+            <img src="https://spoonacular.com/cdn/ingredients_250x250/${ingredient.image}"
+            alt="${ingredient.image}">
             <h2>${ingredient.name}</h2>
             <button class="add">Add</button>
             `;
@@ -60,6 +62,8 @@
             const item = document.createElement("div");
 
             item.innerHTML = `
+            <img src="https://spoonacular.com/cdn/ingredients_250x250/${ingredient.image}"
+            alt="${ingredient.image}">
             <h2>${ingredient}</h2>
             <button class="remove">Remove</button>
             `;
