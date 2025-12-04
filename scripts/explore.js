@@ -76,7 +76,7 @@
             })
 
             if (currentFood.length > 0) {
-                findRecipesBtn.style.display = 'block'; // or 'inline-block'
+                findRecipesBtn.style.display = 'block'; 
             } else {
                 findRecipesBtn.style.display = 'none';
             }
