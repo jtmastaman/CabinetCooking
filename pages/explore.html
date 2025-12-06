@@ -28,7 +28,7 @@
 		<input type="text" class="ingred-search" id="ingred-search" placeholder="Search for ingredients...">
 		<button class="ingred-btn">Go</button>
 		<button class="allergies">Allergies</button>
-		<button class="allergies">Dietary plan</button>
+		<button class="diets">Dietary plan</button>
 	
 	</section>
 
@@ -43,6 +43,37 @@
 	<section id="recipe-results">
 		
 	</section>
+
+	<div id="allergy-modal" class="modal">
+    <div class="allergy-content">
+		
+		<h1 class="allergy-header">Select allergies!</h1>
+		<label><input type="checkbox" value="Celery"> Celery</label>
+		<label><input type="checkbox" value="Coconut"> Coconut</label>
+    	<label><input type="checkbox" value="Corn"> Corn</label>
+    	<label><input type="checkbox" value="Dairy (Milk)"> Dairy (Milk)</label>
+    	<label><input type="checkbox" value="Eggs"> Eggs</label>
+    	<label><input type="checkbox" value="Fish"> Fish</label>
+    	<label><input type="checkbox" value="Gluten"> Gluten</label>
+    	<label><input type="checkbox" value="Lupin"> Lupin</label>
+    	<label><input type="checkbox" value="Mollusks"> Mollusks</label>
+    	<label><input type="checkbox" value="Mustard"> Mustard</label>
+    	<label><input type="checkbox" value="Nightshades"> Nightshades</label>
+    	<label><input type="checkbox" value="Peanuts"> Peanuts</label>
+    	<label><input type="checkbox" value="Red Meat (Alpha-gal)"> Red Meat (Alpha-gal)</label>
+    	<label><input type="checkbox" value="Sesame"> Sesame</label>
+    	<label><input type="checkbox" value="Shellfish"> Shellfish</label>
+    	<label><input type="checkbox" value="Soy"> Soy</label>
+    	<label><input type="checkbox" value="Sulfites"> Sulfites</label>
+    	<label><input type="checkbox" value="Tree Nuts"> Tree Nuts</label>
+    	<label><input type="checkbox" value="Wheat"> Wheat</label>
+    	<label><input type="checkbox" value="Yeast"> Yeast</label>
+
+		<button class="allergyAdd-btn">Add</button>
+        <button class="allergyExit-btn">Exit</button>
+    </div>
+	</div>
+
 	<script src="../scripts/explore.js"></script>
 </body>
 </html>
