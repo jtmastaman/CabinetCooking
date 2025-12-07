@@ -5,10 +5,16 @@ const searchResults = document.getElementById("search-results");
 const recipeResults = document.getElementById("recipe-results");
 const ingredBtn = document.querySelector(".ingred-btn");
 const findRecipesBtn = document.querySelector(".find-recipe-btn");
+
 const allergyBtn = document.querySelector(".allergies");
 const allergyContent = document.getElementById("allergy-content");
-const allergyAddBtn = document.querySelector(".allergyAdd-btn");
-const allergyExitBtn = document.querySelector(".allergyExit-btn");
+const allergyAddBtn = document.querySelector(".allergyAdd-Btn");
+const allergyExitBtn = document.querySelector(".allergyExit-Btn");
+
+const dietBtn = document.querySelector(".diets");
+const dietContent = document.getElementById(".diet-content");
+const dietAddBtn = document.querySelector(".dietAdd-Btn");
+const dietExitBtn = document.querySelector(".dietExit-Btn");
 
 
 let currentFood = [];
@@ -31,7 +37,21 @@ function displayFood(results) {
     searchResults.innerHTML = "";
 
     results.forEach(ingredient => {
-         const item = document.createElement("div");
+        const item = document.createElement("div");
+         
+        const ingredientName = ingredient.name.toLowerCase();
+
+        const hasAllergy = currentAllergies.some(allergy => 
+            ingredientName.includes(allergy.toLowerCase())
+        );
+
+        const hasDiet = currentDiet.some(diet => 
+            ingredientName.includes(diet.toLowerCase().replace('-free', '').replace('free', '').trim())
+        );
+
+        if (hasAllergy || hasDiet) {
+            return;
+        }
 
         item.innerHTML = `
         <img src="https://spoonacular.com/cdn/ingredients_250x250/${ingredient.image}"
@@ -91,18 +111,14 @@ function updateIngredients() {
 
 function searchRecipe() {
     const list = currentFood.join(',');
-    const allergies = currentAllergies.join(',');
     let url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${list}&number=10`;
-
-    if (allergies) {
-        url += `&intolerances=${allergies}`;
-    }
 
     fetch(url)
     .then (response => response.json())
     .then(data =>{
         console.log(data);
-        if (currentAllergies.length > 0) {
+
+        if (currentAllergies.length > 0 || currentDiet.length > 0) {
             filterByAllergies(data);
         } else {
             displayRecipe(data);
@@ -160,7 +176,11 @@ function addAllergy(name) {
 
 function filterByAllergies(recipes) {
     if (currentAllergies.length === 0) {
-        displayRecipe(recipes);
+        if (currentDiet.length > 0) {
+            filterByDiet(recipes);
+        } else {
+            displayRecipe(recipes);
+        }
         return;
     }
 
@@ -179,13 +199,73 @@ function filterByAllergies(recipes) {
             );
         });
         
-        displayRecipe(safe);
+        if(currentDiet.length > 0) {
+            filterByDiet(safe);
+        } else {
+            displayRecipe(safe);
+        }
     });
 }
 
 function dietModal() {
+    const modal = document.getElementById('diet-modal');
+    const checkboxes = modal.querySelectorAll('input[type="checkbox"]');
 
+    modal.style.display = 'block';
+
+    checkboxes.forEach(checkbox =>{
+        checkbox.addEventListener('change', () => {
+            if(checkbox.checked) {
+                addDiet(checkbox.value);
+            } else {
+                currentDiet = currentDiet.filter(item => item !== checkbox.value);
+            }
+        })
+    })
 }
+
+function addDiet(name) {
+    console.log("Adding:", name);
+    console.log("Current array:", currentDiet);
+    if(currentDiet.includes(name)) {
+        return;
+    }
+    currentDiet.push(name);
+}
+
+function filterByDiet(recipes) {
+    if (currentDiet.length === 0) {
+        displayRecipe(recipes);
+        return;
+    }
+
+    const promises = recipes.map(recipe => 
+        fetch(`https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${apiKey}`)
+        .then(res => res.json())
+    );
+    
+    Promise.all(promises).then(fullRecipes => {
+        const safe = fullRecipes.filter(recipe => {
+            return currentDiet.every(diet => {
+                const dietLower = diet.toLowerCase();
+                
+                if (dietLower === 'dairy-free') return recipe.dairyFree;
+                if (dietLower === 'gluten-free') return recipe.glutenFree;
+                if (dietLower === 'keto' || dietLower === 'ketogenic') return recipe.ketogenic;
+                if (dietLower === 'paleo') return recipe.paleolithic;
+                if (dietLower === 'pescatarian') return recipe.pescatarian;
+                if (dietLower === 'vegan') return recipe.vegan;
+                if (dietLower === 'vegetarian') return recipe.vegetarian;
+                if (dietLower === 'whole30') return recipe.whole30;
+
+                return true;
+            });
+        });
+        
+        displayRecipe(safe);
+    });
+}
+
 allergyBtn.addEventListener("click", () => {
     allergyModal();
 });
@@ -197,6 +277,20 @@ allergyAddBtn.addEventListener("click", () => {
 
 allergyExitBtn.addEventListener("click", () => {
     const modal = document.getElementById('allergy-modal');
+    modal.style.display = 'none';
+});
+
+dietBtn.addEventListener("click", () => {
+    dietModal();
+});
+
+dietAddBtn.addEventListener("click", () => {
+    const modal = document.getElementById('diet-modal');
+    modal.style.display = 'none';
+});
+
+dietExitBtn.addEventListener("click", () => {
+    const modal = document.getElementById('diet-modal');
     modal.style.display = 'none';
 });
 

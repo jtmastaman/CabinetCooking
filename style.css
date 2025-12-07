@@ -363,4 +363,23 @@ nav {
 	margin: 5% auto;
 }
 
+#diet-modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	right: 0;
+	background-color: rgba(61, 61, 61, 0.8);
+}
+
+.diet-content {
+	background-color: #F0E9D2;
+	max-width: 300px;
+	max-height: 100vh;
+	overflow-y: auto;
+	border-radius: 8px;
+	margin: 5% auto;
+}
 /* recipe page */
