@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link href="../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<nav>
-		<div class="logo">CabinetCooking</div>
-		<ul class="nav-links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="explore.html">Explore</a></li>
-		</ul>
-		<div class="search-bar">
-		    <input type="text" id="nav-search" placeholder="Search recipes...">
-			<ul id="suggestions"></ul>
-		</div>
-		<button class="settings">
-			<img src="../images/settings.png" alt="settings" />
-		</button>
-	</nav>
+		<nav>
+			<div class="logo">CabinetCooking</div>
+			<ul class="nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="explore.html">Explore</a></li>
+			</ul>
+			<div class="search-bar">
+				<input type="text" id="nav-search" placeholder=" Search recipes...">
+				<button id="nav-btn" class="nav-btn">
+					<img src="../images/search.png" alt="search-button">
+				</button>
+			</div>
+		</nav>
+
+	<div id="recipeContainer"></div>
+		<footer class="footer">
+			<div class="footer-content">
+				<h1>CabinetCooking</h1>
+				<p>© 2025 CabinetCooking</p>
+				</div>
+			</div>
+		</footer>
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/recipe.js"></script>
 </body>
 </html>

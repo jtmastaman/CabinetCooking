@@ -7,28 +7,28 @@
 </head>
 
 <body>
-	<nav>
-		<div class="logo">CabinetCooking</div>
-		<ul class="nav-links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="explore.html">Explore</a></li>
-		</ul>
-		<div class="search-bar">
-			<input type="text" id="nav-search" placeholder="Search recipes...">
-			<ul id="suggestions"></ul>
-		</div>
-		<button class="settings">
-			<img src="../images/settings.png" alt="settings" />
-		</button>
-	</nav>
-	
+		<nav>
+			<div class="logo">CabinetCooking</div>
+			<ul class="nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="explore.html">Explore</a></li>
+			</ul>
+			<div class="search-bar">
+				<input type="text" id="nav-search" placeholder=" Search recipes...">
+				<button id="nav-btn" class="nav-btn">
+					<img src="../images/search.png" alt="search-button">
+				</button>
+			</div>
+		</nav>
 	<section class="explore-header">
 		<h2>Search and add ingredients below, then search for recipes!</h2>
 		<p>Make sure to add any allergies you may have and dietary plans.</p>
 		<input type="text" class="ingred-search" id="ingred-search" placeholder="Search for ingredients...">
 		<button class="ingred-btn">Go</button>
-		<button class="allergies">Allergies</button>
-		<button class="allergies">Dietary plan</button>
+		<div class="button-group">
+			<button class="allergies">Allergies</button>
+			<button class="diets">Dietary plan</button>
+		</div>
 	
 	</section>
 
@@ -43,6 +43,56 @@
 	<section id="recipe-results">
 		
 	</section>
+
+	<div id="allergy-modal" class="modal">
+    <div class="allergy-content">
+		
+		<h1 class="allergy-header">Select allergies!</h1>
+		<label><input type="checkbox" value="Celery"> Celery</label>
+		<label><input type="checkbox" value="Coconut"> Coconut</label>
+    	<label><input type="checkbox" value="Corn"> Corn</label>
+    	<label><input type="checkbox" value="Dairy (Milk)"> Dairy (Milk)</label>
+    	<label><input type="checkbox" value="Eggs"> Eggs</label>
+    	<label><input type="checkbox" value="Fish"> Fish</label>
+    	<label><input type="checkbox" value="Gluten"> Gluten</label>
+    	<label><input type="checkbox" value="Lupin"> Lupin</label>
+    	<label><input type="checkbox" value="Mollusks"> Mollusks</label>
+    	<label><input type="checkbox" value="Mustard"> Mustard</label>
+    	<label><input type="checkbox" value="Nightshades"> Nightshades</label>
+    	<label><input type="checkbox" value="Peanuts"> Peanuts</label>
+    	<label><input type="checkbox" value="Red Meat (Alpha-gal)"> Red Meat (Alpha-gal)</label>
+    	<label><input type="checkbox" value="Sesame"> Sesame</label>
+    	<label><input type="checkbox" value="Shellfish"> Shellfish</label>
+    	<label><input type="checkbox" value="Soy"> Soy</label>
+    	<label><input type="checkbox" value="Sulfites"> Sulfites</label>
+    	<label><input type="checkbox" value="Tree Nuts"> Tree Nuts</label>
+    	<label><input type="checkbox" value="Wheat"> Wheat</label>
+    	<label><input type="checkbox" value="Yeast"> Yeast</label>
+
+		<button class="allergyAdd-Btn">Add</button>
+        <button class="allergyExit-Btn">Exit</button>
+    </div>
+	</div>
+
+	<div id="diet-modal" class="modal">
+    <div class="diet-content">
+        <h1 class="diet-header">Select your diet!</h1>
+        <label><input type="checkbox" value="Dairy-Free"> Dairy-Free</label>
+        <label><input type="checkbox" value="Gluten-Free"> Gluten-Free</label>
+        <label><input type="checkbox" value="Keto"> Keto</label>
+        <label><input type="checkbox" value="Paleo"> Paleo</label>
+        <label><input type="checkbox" value="Pescatarian"> Pescatarian</label>
+        <label><input type="checkbox" value="Vegan"> Vegan</label>
+        <label><input type="checkbox" value="Vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" value="Whole30"> Whole30</label>
+
+        <button class="dietAdd-Btn">Add</button>
+        <button class="dietExit-Btn">Exit</button>
+    </div>
+</div>
+	<script src="../scripts/navbar.js"></script>
 	<script src="../scripts/explore.js"></script>
+
+
 </body>
 </html>

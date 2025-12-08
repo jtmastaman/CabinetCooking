@@ -29,7 +29,7 @@ function cards(results) {
         card.innerHTML = `
             <img src="${ingredient.image}" alt="${ingredient.title}">
             <h2>${ingredient.title}</h2>
-            <button class="view-btn">View Recipe</button>
+            <button class="view-btn" onclick="window.location.href='recipe.html?id=${ingredient.id}'">View Recipe</button>
         `;
 
         cardsContainer.appendChild(card);
